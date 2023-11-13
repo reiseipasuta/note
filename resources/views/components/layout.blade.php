@@ -16,10 +16,15 @@
         <div class="main">
             <div class="sidemenu">
                     <a href="">{{ Auth::user()->name }}</a>
+                    @auth
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="logout">ログアウト</button>
                     </form>
+                    @endauth
+                    @guest
+                        ログイン
+                    @endguest
                     {{-- <img src="" alt="" width="30px" height="30px"> --}}
                     <div class="create">
                         <a href="{{ route('getCreate') }}"><span>+</span>新規ノート</a>

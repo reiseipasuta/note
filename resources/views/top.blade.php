@@ -4,12 +4,12 @@
     </x-slot>
 
     <div class="top-right">
-        <div class="create-form">
+        {{-- <div class="create-form">
             gf
         </div>
         <div class="create-form">
             gf
-        </div>
+        </div> --}}
     </div>
 
 </x-layout>
