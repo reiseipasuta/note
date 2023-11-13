@@ -143,14 +143,15 @@ class GroupController extends Controller
 
     public function joinGroup(Group $group, string $token)
     {
-        if (Token::where('group_id', $group->id)->where('token', $token->token)->exists())
+        if (Token::where('group_id', $group->id)->where('token', $token)->exists())
         {
             if (Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists()){
                 return "既に参加しています";
             }else{
                 Auth::user()->groups()->attach($group->id);
-                $token->flag = 1;
-                $token->save();
+                $token_data = Token::where('token', $token);
+                $token_data->flag = 1;
+                $token_data->save();
                 session()->flash('send', '参加が完了しました！');
                 return redirect()->route('showGroup', $group);
             }

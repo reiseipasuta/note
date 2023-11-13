@@ -53,12 +53,12 @@
                     @endif
                     <div class="group_top">
                         <div class="create-g">
-                            <a href="{{ route('showGroupFrom', $group) }}"><span>+</span>グループ新規ノート作成</a>
+                            <a href="{{ route('showGroupFrom', $group) }}"><span>+</span>新規グループノート作成</a>
                         </div>
-                        グループ名：{{ $group->group_name }}
-                        参加者：
+                        <p>グループ名：{{ $group->group_name }}</p>
+                        <p>参加者：</p>
                         @foreach ($group->users as $user)
-                            {{ $user->name }}
+                                <p>{{ $user->name }}</p>
                         @endforeach
                     </div>
                     <div class="invite">
