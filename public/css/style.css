@@ -1,0 +1,384 @@
+html,body{margin:0;padding:0;}
+
+a {
+    text-decoration: none;
+}
+
+textarea {
+        /* 枠線を消す */
+        border: none;
+
+        /* 右下の//(サイズ変更機能)を消す */
+        resize: none;
+
+        /* フォーカスした際の青い枠線を消す */
+        outline: none;
+
+        /* widthを100%にしておくことで、レスポンシブ対応ができます。 */
+        width: 100%;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.container {
+    height:100vh
+}
+
+.main {
+    display: flex;
+    align-items: stretch;
+    height:100%;
+    overflow: hidden;
+}
+
+.sidemenu {
+    width: 250px;
+    background-color: rgb(39, 39, 39);
+    align-items: stretch;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.sidemenu a {
+    color: white;
+}
+
+.create {
+    text-align: center;
+    margin: 30px 0;
+    width: 90%;
+    padding: 7px 0;
+    border-radius: 100vh;
+    background-color: rgb(27, 165, 78);
+}
+
+.create span{
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.note {
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.note img, a{
+    vertical-align: middle;
+    padding-right: 7px;
+}
+
+.group {
+    color: white;
+}
+
+.group-list {
+    margin: 5px 0 0 10px;
+}
+
+.sidemenu > form {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.logout {
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+/* 中央 */
+
+.memolist {
+    width: 300px;
+    background-color: rgb(236, 236, 236);
+    align-items: stretch;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+
+.memolist span{
+    font-size: 20px;
+}
+
+.memolist-top > img, span {
+    vertical-align: middle;
+}
+
+.memolist-top {
+    padding: 30px;
+}
+
+
+.memo {
+    border: 1px solid rgb(216, 216, 216);
+    margin: 0;
+  }
+
+.memo > a {
+    color:rgb(83, 83, 83);
+    display: inline-block;
+    margin: 0;
+  }
+
+.memo:active {
+    background-color: rgb(203, 201, 201);
+    border-top: 2px solid gray;
+    border-left: 3px solid gray;
+  }
+
+.memo :nth-child(1) {
+    padding: 5px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.memo :nth-child(2) {
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.memo :nth-child(3) {
+    padding: 5px 20px;
+    font-size: 12px;
+    color: rgb(83, 83, 83);
+    font-weight: normal;
+}
+
+.memo :nth-child(4) {
+    padding: 5px 20px;
+    font-size: 12px;
+    color: rgb(83, 83, 83);
+    font-weight: normal;
+}
+
+/* 右側 */
+
+.right {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    align-items: stretch;
+    overflow: scroll;
+}
+
+.right-menu {
+    text-align: right;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    padding: 25.5px;
+}
+
+.right-menu span{
+    font-size:  13px;
+    color: gray;
+}
+
+.kyoyu {
+    padding: 7px 15px;
+    background-color: rgb(27, 165, 78);
+    border-radius: 10%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.kyoyu > button {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.kyoyu > a {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.memo-show {
+    margin: 30px;
+}
+
+.memo-show-create {
+    margin: 0px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.title-create {
+    font-weight: bold;
+    font-size: 25px;
+    cursor: text;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.title-create > textarea {
+    font-size: 25px;
+}
+
+.memo-body-create {
+    height: auto;
+    min-height: 500px;
+    cursor: text;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.create-form {
+    margin: 0;
+}
+
+.quit {
+    text-align: right;
+    margin-right: 50px;
+    margin-top: 200px;
+}
+
+.quit button {
+    font-size: 15px;
+    border: 1px solid gray;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.share-form {
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.share-form button {
+    margin-left: 20px;
+    border: 0.5px solid gray;
+    padding: 8px;
+}
+
+.share-form input {
+    width: 200px;
+}
+
+
+.group-show {
+    margin-top: 50px;
+    width: 90%;
+    height: auto;
+    border-radius: 20%;
+    background-color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.create-g {
+    text-align: center;
+    margin: 30px 0;
+    width: 250px;
+    padding: 7px 0;
+    border-radius: 100vh;
+    background-color: rgb(27, 165, 78);
+}
+
+.create-g a {
+    color: white;
+}
+
+.create-g span{
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+
+
+/* トップ */
+.top-right {
+    background-image: url("https://www.ejcra.org/column/fdvulm00000013q1-img/gazou1.jpg");
+    background-repeat: no-repeat;
+    flex: 1;
+    min-height: 100vh;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+
+.top-right-top {
+    /* margin-top: 300px; */
+    /* position: absolute; */
+    background-color: white;
+    width: 45%;
+    min-width: 600px;
+    height: 500px;
+    /* top:300px */
+    margin-top: 300px;
+    border-radius: 10%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.flash_message {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/* グループ作成画面 */
+
+.group-create {
+    margin-top: 80px;
+    width: 70%;
+    height: 500px;
+    border-radius: 20%;
+    background-color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.group-create > p {
+    font-size: 25px;
+}
+
+.group-create input {
+    height: 30px;
+    width: 50%;
+    margin-left: 10px;
+}
+
+.group-create button {
+    margin-left: 20px;
+    padding: 8px 10px;
+    background-color: aquamarine;
+    border-radius: 20%;
+}
+
+.group-create  button:hover{
+    background-color: rgb(118, 230, 192);
+    transition: 0.3s;
+}
+
+
+
