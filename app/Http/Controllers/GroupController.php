@@ -149,9 +149,10 @@ class GroupController extends Controller
                 return "既に参加しています";
             }else{
                 Auth::user()->groups()->attach($group->id);
-                $token_data = Token::where('token', $token);
-                $token_data->flag = 1;
-                $token_data->save();
+                Token::where('token', $token)
+                    ->update(['flag' => 1]);
+                // $token_data->flag = 1;
+                // $token_data->save();
                 session()->flash('send', '参加が完了しました！');
                 return redirect()->route('showGroup', $group);
             }

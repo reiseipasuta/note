@@ -28,8 +28,8 @@
             </div>
             <div class="right">
                 <div class="right-menu">
-                    @if ($group)
-                        <span>グループ共有</span>
+                    @if (isset($group))
+                        <span>グループ【{{ $group->group_name }}】で共有されているノート</span>
                     @else
                         <span>自分のみ</span>
                     @endif

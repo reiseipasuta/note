@@ -28,9 +28,10 @@ class NoteController extends Controller
     {
         $lists = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
 
-        $group = Post::with('groups')->whereHas('groups', function($query) use ($post){
-            $query->where('post_id', '=', $post->id);
-        })->exists();
+        // $group = Post::with('groups')->whereHas('groups', function($query) use ($post){
+        //     $query->where('post_id', '=', $post->id);
+        // })->first();
+        $group = $post->groups()->first();
 
         return view('note.shownote')
             ->with(['lists' => $lists, 'post' => $post, 'group' => $group]);

@@ -56,9 +56,9 @@
                             <a href="{{ route('showGroupFrom', $group) }}"><span>+</span>新規グループノート作成</a>
                         </div>
                         <p>グループ名：{{ $group->group_name }}</p>
-                        <p>参加者：</p>
+                        参加者：
                         @foreach ($group->users as $user)
-                                <p>{{ $user->name }}</p>
+                            {{ $user->name }},
                         @endforeach
                     </div>
                     <div class="invite">
