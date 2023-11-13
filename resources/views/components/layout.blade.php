@@ -16,7 +16,7 @@
         <div class="main">
             <div class="sidemenu">
                 @auth
-                    <a href="{{ route('top') }}">{{ Auth::user()->name }}</a>
+                    <a href="{{ route('notetop') }}">{{ Auth::user()->name }}</a>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="logout">ログアウト</button>
