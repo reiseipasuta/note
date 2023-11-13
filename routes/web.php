@@ -23,12 +23,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/', function () {
+    return view('top');
+});
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/', function () {
-        return view('top');
-    });
 
     Route::get('top', [MainController::class, 'getTop'])
     ->name('top');
