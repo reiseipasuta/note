@@ -1,4 +1,4 @@
 
 <p>ノートが共有されました</p>
 <p>タイトル：{{$post->title}}</p>
-<p>URL：http://localhost:8081/showshare/{{ $post->id }}</p>
+<p>URL：http://note.crap.jp/note/showshare/{{ $post->id }}</p>
