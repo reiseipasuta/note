@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>{{ $title }}</title>
 </head>
+
 <body>
     <div class="container">
 
@@ -17,10 +17,10 @@
             <div class="sidemenu">
                 @auth
                     <a href="{{ route('notetop') }}">{{ Auth::user()->name }}</a>
-                    <form action="{{ route('logout') }}" method="post">
+                    {{-- <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="logout">ログアウト</button>
-                    </form>
+                    </form> --}}
 
                     {{-- <img src="" alt="" width="30px" height="30px"> --}}
                     <div class="create">
@@ -30,33 +30,39 @@
                         <a href="{{ route('getCreateGroup') }}"><span>+</span>新規グループ</a>
                     </div>
                     <div class="note">
-                        <img src="https://img.icons8.com/cotton/344/create-new--v5.png" alt="" width="20px" height="20px"><a href="{{ route('notetop') }}">ノート一覧</a>
+                        <img src="https://img.icons8.com/cotton/344/create-new--v5.png" alt="" width="20px"
+                            height="20px"><a href="{{ route('notetop') }}">ノート一覧</a>
                     </div>
                     <div class="group">
                         参加グループ一覧
                         <div class="group-lists">
                             @foreach ($groups as $group)
-                            <div class="group-list">
-                                <a href="{{ route('showGroup', $group) }}">{{ $group->group_name }}</a>
-                            </div>
+                                <div class="group-list">
+                                    <a href="{{ route('showGroup', $group) }}">{{ $group->group_name }}</a>
+                                </div>
                             @endforeach
                         </div>
-
                     </div>
-                    @endauth
-                    @guest
+                    <div class="logout_link">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button class="logout">ログアウト</button>
+                        </form>
+                    </div>
+                @endauth
+                @guest
                     <div>
                         <form action="{{ route('login') }}">
-                            <button class="logput">ログイン</button>
+                            <button class="create">ログイン</button>
                         </form>
                     </div>
                     <div>
                         <form action="{{ route('register') }}">
-                            <button class="logput">新規登録</button>
+                            <button class="create">新規登録</button>
                         </form>
                     </div>
 
-                    @endguest
+                @endguest
             </div>
 
             {{ $slot }}
@@ -67,4 +73,5 @@
     </div>
 
 </body>
+
 </html>
