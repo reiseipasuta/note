@@ -39,7 +39,7 @@ class GroupController extends Controller
     {
         $groupId = $group->id;
 
-        $posts = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
+        $lists = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
         })
         ->get();
@@ -61,7 +61,7 @@ class GroupController extends Controller
             return $user->id === Auth::id();
         });
 
-        return view('group.show-group', compact('posts', 'group', 'member'));
+        return view('group.show-group', compact('lists', 'group', 'member'));
     }
 
     public function showGroupFrom(Group $group)
@@ -111,7 +111,7 @@ class GroupController extends Controller
         // $userIds = $group->users->pluck('id');
         // $lists = Post::whereIn('user_id', $userIds)->orderBy('id', 'desc')->get();
 
-        $lists = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
+        $lists = Post::whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
         })
         ->get();

@@ -45,12 +45,16 @@
                     </div>
                     @endauth
                     @guest
+                    <div>
                         <form action="{{ route('login') }}">
                             <button class="logput">ログイン</button>
                         </form>
+                    </div>
+                    <div>
                         <form action="{{ route('register') }}">
                             <button class="logput">新規登録</button>
                         </form>
+                    </div>
 
                     @endguest
             </div>

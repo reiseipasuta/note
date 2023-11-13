@@ -5,7 +5,8 @@
         @if (!$member)
         <p>グループの参加者ではありません。</p>
         @else
-            <div class="memolist">
+        <x-list-g :lists="$lists" :group="$group" />
+            {{-- <div class="memolist">
                 <div class="memolist-top">
                     <img src="https://img.icons8.com/cotton/344/create-new--v5.png" alt="" width="30px" height="30px">
                     <span>ノート</span>
@@ -31,7 +32,7 @@
                     </a>
                 </div>
                 @endforeach
-            </div>
+            </div> --}}
 
             <div class="right">
                 {{-- <div class="right-menu">

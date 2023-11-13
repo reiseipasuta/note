@@ -3,7 +3,8 @@
         TOP - LikeEvernote
     </x-slot>
 
-            <div class="memolist">
+    <x-list :lists="$lists" />
+            {{-- <div class="memolist">
                 <div class="memolist-top">
                     <img src="https://img.icons8.com/cotton/344/create-new--v5.png" alt="" width="30px" height="30px">
                     <span>ノート</span>
@@ -25,27 +26,27 @@
                     </a>
                 </div>
                 @endforeach
-            </div>
+            </div> --}}
             <div class="right">
                 <div class="right-menu">
                     {{-- <span>自分のみ</span> --}}
-                    <div class="kyoyu">
+                    {{-- <div class="kyoyu">
                         <a href="{{ route('shareForm', $post) }}">共有</a>
                     </div>
                     <div class="kyoyu">
                         <button form="create">編集</button>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <div class="memo-show">
-                    <div class="title">
+                    {{-- <div class="title">
                         @if(isset($first_post))
                             {{ $first_post->title }}
                         @endif
-                    </div>
+                    </div> --}}
                     <div class="memo-body">
                         @if(isset($first_post))
-                            {{ $first_post->body }}
+
                         @else
                             まだノートはありません。
                         @endif

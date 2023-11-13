@@ -36,10 +36,9 @@ class MainController extends Controller
         $member = Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists();
 
         $groupId = $group->id;
-        $lists = Post::with('user.groups')
-        ->whereHas('user.groups', function($query) use ($groupId) {
+        $lists = Post::whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
-        })->orderBy('id', 'desc')
+        })
         ->get();
 
         return view('group.shareForm-g', compact('post', 'lists', 'member', 'group'));

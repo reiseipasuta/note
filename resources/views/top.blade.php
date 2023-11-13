@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        TOP - LikeEvernote
+        TOP - NOTE
     </x-slot>
 
     <div class="top-right">

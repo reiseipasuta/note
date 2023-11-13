@@ -17,11 +17,11 @@ class NoteController extends Controller
 {
     public function notetop()
     {
-        $posts = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        $lists = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
         // return $posts;
         $first_post = Post::where('user_id', Auth::id())->latest('id')->first();
         return view('note.notetop')
-            ->with(['posts' => $posts, 'first_post' => $first_post]);
+            ->with(['lists' => $lists, 'first_post' => $first_post]);
     }
 
     public function shownote(Post $post)
@@ -40,10 +40,10 @@ class NoteController extends Controller
 
     public function getCreate()
     {
-        $posts = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        $lists = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
         $groups = Auth::user()->groups()->get();
         return view('note.create')
-            ->with(['posts' => $posts, 'groups' => $groups]);
+            ->with(['lists' => $lists, 'groups' => $groups]);
     }
 
     public function create(Request $request)
