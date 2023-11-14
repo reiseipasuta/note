@@ -38,7 +38,7 @@ class GroupController extends Controller
     public function showGroup(Group $group)
     {
         $group->check_member($group);
-        
+
         $groupId = $group->id;
 
         $lists = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
@@ -121,7 +121,40 @@ class GroupController extends Controller
         ->get();
 
         $member = Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists();
-        // return $member;
+
+        return view('group.shownote-g', compact('lists', 'group', 'post', 'member'));
+    }
+
+    public function getEditGroupNote(Group $group, Post $post)
+    {
+        $group->check_member($group);
+        $groupId = $group->id;
+
+        $lists = Post::whereHas('groups', function($query) use ($groupId){
+            $query->where('group_id', '=', $groupId);
+        })
+        ->get();
+
+        $member = Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists();
+
+        return view('group.edit-note-g', compact('lists', 'group', 'post', 'member'));
+    }
+
+    public function editGroupNote(Request $request,Group $group,Post $post)
+    {
+        $group->check_member($group);
+
+        $post->update([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+
+        $lists = Post::with('groups')->whereHas('groups', function($query) use ($group){
+            $query->where('group_id', '=', $group->id);
+        })
+        ->get();
+
+        $member = Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists();
 
         return view('group.shownote-g', compact('lists', 'group', 'post', 'member'));
     }

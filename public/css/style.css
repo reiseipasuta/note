@@ -239,6 +239,12 @@ button {
     font-weight: bold;
 }
 
+.menu_btn > a button {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .memo-show {
     margin: 30px;
 }

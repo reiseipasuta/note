@@ -67,9 +67,14 @@ class NoteController extends Controller
     public function edit(Request $request, Post $post)
     {
         $post->check_user($post->user_id);
-        $post->fill($request->all());
-        $post->save();
-        return redirect()->back();
+        $post->update([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+
+        $lists = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        $groups = Auth::user()->groups()->get();
+        return view('note.shownote', compact('lists', 'groups', 'post'));
     }
 
 

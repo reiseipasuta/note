@@ -2,15 +2,17 @@
     <x-slot name="title">
         TOP - LikeEvernote
     </x-slot>
-    <x-list :lists="$lists" />
+    @if ($member)
+    <x-list-g :lists="$lists" :group="$group" />
+        @endif
             <div class="right">
                 <div class="right-menu">
                     <div class="menu_btn">
-                        <button form="create">保存</button>
+                        <button form="edit">保存</button>
                     </div>
                 </div>
 
-                <form action="{{ route('edit', $post) }}" method="post" id="create">
+                <form action="{{ route('editGroupNote', ['group' => $group, 'post' => $post]) }}" method="post" id="edit">
                     @method('PATCH')
                     @csrf
                     <div class="memo-show-create">

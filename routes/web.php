@@ -45,7 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::post('create', [NoteController::class, 'create'])
                 ->name('create');
 
-    Route::get('getEdit/{post}', [NoteController::class, 'getEdit'])
+    Route::get('edit/{post}', [NoteController::class, 'getEdit'])
                 ->name('getEdit');
 
     Route::patch('edit/{post}', [NoteController::class, 'edit'])
@@ -71,6 +71,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('showGroup/{group}/{post}', [GroupController::class, 'showGroupNote'])
                 ->name('showGroupNote');
+
+    Route::get('showGroup/edit/{group}/{post}', [GroupController::class, 'getEditGroupNote'])
+                ->name('getEditGroupNote');
+
+    Route::patch('showGroup/edit/{group}/{post}', [GroupController::class, 'editGroupNote'])
+                ->name('editGroupNote');
 
     Route::post('showGroup/{group}/inviteGroup', [GroupController::class, 'inviteGroup'])
                 ->name('inviteGroup');
