@@ -27,6 +27,9 @@ Route::get('/', function () {
     return view('top');
 });
 
+Route::get('guest', [MainController::class, 'guest'])
+->name('guest');
+
 Route::middleware('auth')->group(function () {
 
 

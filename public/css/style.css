@@ -102,6 +102,12 @@ button {
     cursor: pointer;
 }
 
+.guest {
+    margin-top: 10px;
+    font-size: 14px;
+    color: cadetblue;
+}
+
 
 
 

@@ -23,7 +23,11 @@ class MainController extends Controller
             // ->with(['groups' => $groups]);
     }
 
-
+    public function guest()
+    {
+        Auth::loginUsingId(1);
+        return view('top');
+    }
 
     public function shareForm(Post $post)
     {

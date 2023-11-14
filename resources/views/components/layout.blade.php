@@ -21,6 +21,12 @@
                         <i class="fa-solid fa-dove fa-xl" style="color: #7887a1;"></i>
                         {{ Auth::user()->name }}
                     </a>
+                    @if(Auth::id() === 1)
+                    <div class="guest">
+                        ゲスト用アカウントです。<br>
+                        ご自由にお試し下さい。
+                    </div>
+                    @endif
                     <div class="create">
                         <a href="{{ route('getCreate') }}"><span><i class="fa-solid fa-plus"></i></span>新規ノート</a>
                     </div>
@@ -51,6 +57,11 @@
                     </div>
                 @endauth
                 @guest
+                    <div>
+                        <a href="{{ route('guest') }}">
+                            <button class="create">簡単ログイン</button>
+                        </a>
+                    </div>
                     <div>
                         <form action="{{ route('login') }}">
                             <button class="create">ログイン</button>
