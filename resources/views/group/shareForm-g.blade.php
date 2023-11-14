@@ -2,7 +2,7 @@
     <x-slot name="title">
         TOP - LikeEvernote
     </x-slot>
-        @if ($member)
+    @if ($member)
         <x-list-g :lists="$lists" :group="$group" />
         {{-- <div class="memolist">
             <div class="memolist-top">
@@ -31,37 +31,41 @@
             </div>
             @endforeach
         </div> --}}
-        @endif
-            <div class="right">
-                <div class="right-menu">
-                    {{-- <span>自分のみ</span> --}}
-                    <div class="menu_btn">
-                        <button>共有</button>
-                    </div>
-                    <div class="menu_btn">
-                        <button form="edit">編集</button>
-                    </div>
-                </div>
-
-                <div class="memo-show">
-                    @if(session('send'))
-                    <div class="flash_message">
-                        {{ session('send') }}
-                    </div>
-                    @endif
-                    <form action="{{ route('share', $post) }}" method="post" class="share-form">
-                        @csrf
-                        メールアドレス：<input type="text" name="email">
-                        <button>共有する</button>
-                    </form>
-                    <div class="title">
-                        {{ $post->title }}
-                    </div>
-                    <div class="memo-body">
-                        {!! nl2br(e($post->body)) !!}
-                    </div>
-
-                </div>
+    @endif
+    <div class="right">
+        <div class="right-menu">
+            {{-- <span>自分のみ</span> --}}
+            <div class="menu_btn">
+                <button>共有</button>
             </div>
+            @if ($post->user_id === Auth::id())
+                <div class="menu_btn">
+                    <a href="{{ route('getEditGroupNote', ['group' => $group, 'post' => $post]) }}">
+                        <button>編集</button>
+                    </a>
+                </div>
+            @endif
+        </div>
+
+        <div class="memo-show">
+            @if (session('send'))
+                <div class="flash_message">
+                    {{ session('send') }}
+                </div>
+            @endif
+            <form action="{{ route('share', $post) }}" method="post" class="share-form">
+                @csrf
+                メールアドレス：<input type="text" name="email">
+                <button>共有する</button>
+            </form>
+            <div class="title">
+                {{ $post->title }}
+            </div>
+            <div class="memo-body">
+                {!! nl2br(e($post->body)) !!}
+            </div>
+
+        </div>
+    </div>
 
 </x-layout>
