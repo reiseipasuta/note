@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://kit.fontawesome.com/b126c05739.js" crossorigin="anonymous"></script>
     <title>{{ $title }}</title>
 </head>
 
@@ -16,24 +17,22 @@
         <div class="main">
             <div class="sidemenu">
                 @auth
-                    <a href="{{ route('notetop') }}">{{ Auth::user()->name }}</a>
-                    {{-- <form action="{{ route('logout') }}" method="post">
-                        @csrf
-                        <button class="logout">ログアウト</button>
-                    </form> --}}
-
-                    {{-- <img src="" alt="" width="30px" height="30px"> --}}
+                    <a href="{{ route('notetop') }}">
+                        <i class="fa-solid fa-dove fa-xl" style="color: #7887a1;"></i>
+                        {{ Auth::user()->name }}
+                    </a>
                     <div class="create">
-                        <a href="{{ route('getCreate') }}"><span>+</span>新規ノート</a>
+                        <a href="{{ route('getCreate') }}"><span><i class="fa-solid fa-plus"></i></span>新規ノート</a>
                     </div>
                     <div class="create">
-                        <a href="{{ route('getCreateGroup') }}"><span>+</span>新規グループ</a>
+                        <a href="{{ route('getCreateGroup') }}"><span><i class="fa-solid fa-plus"></i></span>新規グループ</a>
                     </div>
                     <div class="note">
-                        <img src="https://img.icons8.com/cotton/344/create-new--v5.png" alt="" width="20px"
-                            height="20px"><a href="{{ route('notetop') }}">ノート一覧</a>
+                        <i class="fa-regular fa-pen-to-square fa-xl" style="color: #7a7a7a;"></i>
+                        <a href="{{ route('notetop') }}">ノート一覧</a>
                     </div>
                     <div class="group">
+                        <i class="fa-solid fa-people-group fa-xl" style="color: #bdd5ff;"></i>
                         参加グループ一覧
                         <div class="group-lists">
                             @foreach ($groups as $group)
@@ -46,6 +45,7 @@
                     <div class="logout_link">
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #696969;"></i>
                             <button class="logout">ログアウト</button>
                         </form>
                     </div>

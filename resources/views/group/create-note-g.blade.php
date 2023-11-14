@@ -52,12 +52,12 @@
                     <div class="memo-show-create">
                         <label for="title">
                             <div class="title-create">
-                                <textarea name="title" id="title" placeholder="題名"></textarea>
+                                <textarea name="title" id="title" placeholder="題名" required></textarea>
                             </div>
                         </label>
                         <label for="body">
                             <div class="memo-body-create">
-                                <textarea name="body" id="body" placeholder="本文"></textarea>
+                                <textarea name="body" id="body" placeholder="本文" required></textarea>
                             </div>
                         </label>
                     </div>

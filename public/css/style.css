@@ -22,6 +22,10 @@ textarea {
     height: 1000px;
 }
 
+input {
+    outline: none;
+}
+
 button {
     padding: 0;
     background-color: transparent;
@@ -178,7 +182,19 @@ button {
     font-weight: normal;
 }
 
+
+
+
+
+
+
+
 /* 右側 */
+
+
+
+
+
 
 .right {
     flex: 1;
@@ -321,6 +337,49 @@ button {
     padding-right: 10px;
 }
 
+.memo-show form {
+    margin: 20px 20px 20px 0;
+}
+.memo-show form button {
+    background-color: rgb(136, 162, 141);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.g_name span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.invite {
+    margin: 50px 0;
+}
+.invite p {
+    width: 160px;
+    padding: 5px 5px 5px 10px;
+    font-weight: bold;
+    margin-bottom: 0;
+    background-color: rgb(151, 181, 163);
+    border-radius: 10px 10px 0 0;
+}
+.invite form {
+    width: 500px;
+    padding: 20px;
+    margin-top: 0;
+    background-color: rgb(186, 247, 216);
+    border-top-right-radius: 10px;
+}
+.invite form input {
+    padding: 5px;
+    margin: 0 10px;
+    width: 200px;
+}
+
+
+
+
+
+
 
 
 /* トップ */
@@ -397,6 +456,16 @@ button {
 }
 
 
+.logout_link {
+    /* text-align: center; */
+    margin-top: 100px;
+}
+
+.logout_link form button {
+    font-weight: bold;
+}
+
+
 
 
 
@@ -409,15 +478,23 @@ button {
 
 /* グループ作成画面 */
 
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .group-create {
     margin-top: 80px;
     width: 70%;
-    height: 500px;
-    border-radius: 20%;
-    background-color: white;
+    height: 300px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.863);
     padding: 30px;
     box-sizing: border-box;
     text-align: center;
+    animation-name: fade;
+    animation-duration: 0.5s;
 }
 
 .group-create > p {

@@ -32,7 +32,7 @@ class GroupController extends Controller
 
         User::find(Auth::id())->groups()->attach($group);
 
-        return redirect()->route('getCreateGroup');
+        return redirect()->route('showGroup', $group);
     }
 
     public function showGroup(Group $group)

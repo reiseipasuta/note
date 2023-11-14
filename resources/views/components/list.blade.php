@@ -1,6 +1,6 @@
 <div class="memolist">
     <div class="memolist-top">
-        <img src="https://img.icons8.com/cotton/344/create-new--v5.png" alt="" width="30px" height="30px">
+        <i class="fa-regular fa-pen-to-square fa-xl" style="color: #435370;"></i>
         <span>ノート</span>
     </div>
     @foreach ($lists as $list)
