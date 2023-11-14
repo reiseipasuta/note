@@ -359,6 +359,17 @@ button {
     padding: 80px;
     background-color: rgba(240, 248, 255, 0.496);
     border-radius: 25%;
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
 }
 
 .mar_bottom10 {

@@ -52,7 +52,7 @@
                         {{ $post->title }}
                     </div>
                     <div class="memo-body">
-                        {{ $post->body }}
+                        {!! nl2br(e($post->body)) !!}
                     </div>
 
                 </div>
