@@ -35,11 +35,11 @@
             <div class="right">
                 <div class="right-menu">
                     <span>グループ名：{{ $group->group_name }}</span>
-                    <div class="kyoyu">
+                    <div class="menu_btn">
                         <a href="{{ route('shareForm_g', ['post' => $post, 'group' => $group]) }}">共有</a>
                     </div>
                     @if($member)
-                    <div class="kyoyu">
+                    <div class="menu_btn">
                         <button form="edit">編集</button>
                     </div>
                     @endif

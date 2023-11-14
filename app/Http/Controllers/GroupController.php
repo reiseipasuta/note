@@ -37,6 +37,8 @@ class GroupController extends Controller
 
     public function showGroup(Group $group)
     {
+        $group->check_member($group);
+        
         $groupId = $group->id;
 
         $lists = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
@@ -66,6 +68,7 @@ class GroupController extends Controller
 
     public function showGroupFrom(Group $group)
     {
+        $group->check_member($group);
         $groupId = $group->id;
 
         $lists = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
@@ -86,6 +89,7 @@ class GroupController extends Controller
 
     public function createGroupNote(Request $request,Group $group)
     {
+        $group->check_member($group);
         $post = new Post();
         $post->fill($request->all());
         $post->user_id = Auth::id();

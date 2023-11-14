@@ -45,6 +45,15 @@ Route::middleware('auth')->group(function () {
     Route::post('create', [NoteController::class, 'create'])
                 ->name('create');
 
+    Route::get('getEdit/{post}', [NoteController::class, 'getEdit'])
+                ->name('getEdit');
+
+    Route::patch('edit/{post}', [NoteController::class, 'edit'])
+                ->name('edit');
+
+    Route::delete('delete', [NoteController::class, 'delete'])
+                ->name('delete');
+
     Route::get('getCreateGroup', [GroupController::class, 'getCreateGroup'])
                 ->name('getCreateGroup');
 

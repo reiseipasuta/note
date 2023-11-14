@@ -6,7 +6,7 @@
             <div class="right">
                 <div class="right-menu">
                     <span>{{ $post->user->name }}</span>
-                    <div class="kyoyu">
+                    <div class="menu_btn">
                         <a href="{{ route('shareForm', $post) }}">共有</a>
                     </div>
                 </div>

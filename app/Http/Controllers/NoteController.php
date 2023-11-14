@@ -56,5 +56,21 @@ class NoteController extends Controller
         return redirect()->route('notetop');
     }
 
+    public function getEdit(Post $post)
+    {
+        $post->check_user($post->user_id);
+        $lists = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        $groups = Auth::user()->groups()->get();
+        return view('note.edit', compact('lists', 'groups', 'post'));
+    }
+
+    public function edit(Request $request, Post $post)
+    {
+        $post->check_user($post->user_id);
+        $post->fill($request->all());
+        $post->save();
+        return redirect()->back();
+    }
+
 
 }

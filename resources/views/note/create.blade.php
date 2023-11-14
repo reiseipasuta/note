@@ -36,7 +36,7 @@
                     @foreach ($groups as $group)
                         <input type="checkbox" name="" form="create">{{ $group->group_name }}
                     @endforeach --}}
-                    <div class="kyoyu">
+                    <div class="menu_btn">
                         <button form="create">保存</button>
                     </div>
                 </div>

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Group extends Model
 {
@@ -32,5 +33,17 @@ class Group extends Model
     public function posts()
     {
         return $this->belongsToMany(Post::class);
+    }
+
+    public function check_member($group)
+    {
+        $member = $group->users->contains(function ($user) {
+            return $user->id === Auth::id();
+        });
+
+        if (!$member)
+        {
+            return abort(403);
+        }
     }
 }

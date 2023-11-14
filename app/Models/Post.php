@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
@@ -23,6 +24,13 @@ class Post extends Model
     public function groups()
     {
         return $this->belongsToMany(Group::class);
+    }
+
+    public function check_user($id)
+    {
+        if(!$id == Auth::id()){
+            return abort(403);
+        }
     }
 
 }

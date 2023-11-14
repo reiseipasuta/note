@@ -33,8 +33,11 @@
                     @else
                         <span>自分のみ</span>
                     @endif
-                    <div class="kyoyu">
+                    <div class="menu_btn">
                         <a href="{{ route('shareForm', $post) }}">共有</a>
+                    </div>
+                    <div class="menu_btn">
+                        <a href="{{ route('getEdit', $post) }}">編集</a>
                     </div>
                     {{-- <div class="kyoyu">
                         <button form="create">保存</button>

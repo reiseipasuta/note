@@ -29,10 +29,10 @@
             <div class="right">
                 <div class="right-menu">
                     {{-- <span>自分のみ</span> --}}
-                    <div class="kyoyu">
+                    <div class="menu_btn">
                         <button>共有</button>
                     </div>
-                    <div class="kyoyu">
+                    <div class="menu_btn">
                         <button form="edit">編集</button>
                     </div>
                 </div>

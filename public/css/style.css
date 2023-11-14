@@ -217,7 +217,7 @@ button {
     color: gray;
 }
 
-.kyoyu {
+.menu_btn {
     padding: 7px 15px;
     background-color: rgb(27, 165, 78);
     border-radius: 10%;
@@ -226,14 +226,14 @@ button {
     margin-left: 15px;
 }
 
-.kyoyu > button {
+.menu_btn > button {
     color: white;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.kyoyu > a {
+.menu_btn > a {
     color: white;
     font-size: 15px;
     font-weight: bold;
