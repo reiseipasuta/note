@@ -36,9 +36,11 @@
                     <div class="menu_btn">
                         <a href="{{ route('shareForm', $post) }}">共有</a>
                     </div>
+                    @if ($post->user_id === Auth::id())
                     <div class="menu_btn">
                         <a href="{{ route('getEdit', $post) }}">編集</a>
                     </div>
+                    @endif
                     {{-- <div class="kyoyu">
                         <button form="create">保存</button>
                     </div> --}}
