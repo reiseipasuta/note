@@ -38,7 +38,7 @@
             <div class="menu_btn">
                 <a href="{{ route('shareForm_g', ['post' => $post, 'group' => $group]) }}">共有</a>
             </div>
-            @if ($member)
+            @if ($post->user_id === Auth::id())
                 <div class="menu_btn">
                     <a href="{{ route('getEditGroupNote', ['group' => $group, 'post' => $post]) }}">
                         <button>編集</button>
