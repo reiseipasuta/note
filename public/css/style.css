@@ -48,6 +48,7 @@ button {
 }
 
 .sidemenu {
+    width: 280px;
     min-width: 280px;
     background-color: rgb(39, 39, 39);
     align-items: stretch;
@@ -112,6 +113,7 @@ button {
 /* 中央 */
 
 .memolist {
+    width: 300px;
     min-width: 300px;
     background-color: rgb(236, 236, 236);
     align-items: stretch;
