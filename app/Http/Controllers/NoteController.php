@@ -77,5 +77,12 @@ class NoteController extends Controller
         return view('note.shownote', compact('lists', 'groups', 'post'));
     }
 
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('top');
+        // return redirect()->back();
+    }
+
 
 }

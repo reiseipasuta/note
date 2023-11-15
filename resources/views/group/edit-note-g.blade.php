@@ -10,6 +10,13 @@
                     <div class="menu_btn">
                         <button form="edit">保存</button>
                     </div>
+                    <div class="menu_btn">
+                        <form action="{{ route('destroyGroupNote', ['group' => $group, 'post' => $post]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button>削除</button>
+                        </form>
+                    </div>
                 </div>
 
                 <form action="{{ route('editGroupNote', ['group' => $group, 'post' => $post]) }}" method="post" id="edit">

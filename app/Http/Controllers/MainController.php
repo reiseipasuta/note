@@ -19,19 +19,21 @@ class MainController extends Controller
     {
         // $groups = User::find(Auth::id())->groups()->get();
         // return $groups;
-        return view('top');
-            // ->with(['groups' => $groups]);
+        $lists = Post::where('user_id', Auth::id())->latest()->get();
+        return view('top')
+            ->with(['lists' => $lists]);
     }
 
     public function guest()
     {
+        $lists = Post::where('user_id', Auth::id())->latest()->get();
         Auth::loginUsingId(1);
-        return view('top');
+        return view('top')->with(['lists' => $lists]);
     }
 
     public function shareForm(Post $post)
     {
-        $lists = Post::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        $lists = Post::where('user_id', Auth::id())->latest()->get();
         return view('note.shareForm', compact('post', 'lists'));
     }
 
@@ -43,7 +45,7 @@ class MainController extends Controller
         $lists = Post::whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
         })
-        ->get();
+        ->latest()->get();
 
         return view('group.shareForm-g', compact('post', 'lists', 'member', 'group'));
     }

@@ -48,8 +48,7 @@ button {
 }
 
 .sidemenu {
-    width: 280px;
-    min-width: 230px;
+    min-width: 280px;
     background-color: rgb(39, 39, 39);
     align-items: stretch;
     padding: 30px;
@@ -81,7 +80,6 @@ button {
 
 .note img, a{
     vertical-align: middle;
-    padding-right: 7px;
 }
 
 .group {
@@ -114,8 +112,7 @@ button {
 /* 中央 */
 
 .memolist {
-    width: 300px;
-    min-width: 230px;
+    min-width: 300px;
     background-color: rgb(236, 236, 236);
     align-items: stretch;
     box-sizing: border-box;
@@ -246,6 +243,12 @@ button {
 }
 
 .menu_btn > a button {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.menu_btn > form button {
     color: white;
     font-size: 15px;
     font-weight: bold;
@@ -409,6 +412,7 @@ button {
     background-size: cover;
     position: relative;
     justify-content: space-around;
+    opacity: 0.6;
 }
 
 .top-right-top {

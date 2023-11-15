@@ -44,7 +44,7 @@ class GroupController extends Controller
         $lists = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
         })
-        ->get();
+        ->latest()->get();
 
         // $posts = Post::with('user.groups')
         // ->whereHas('user.groups', function($query) use ($groupId) {
@@ -74,7 +74,7 @@ class GroupController extends Controller
         $lists = Post::with('groups')->whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
         })
-        ->get();
+        ->latest()->get();
 
         // $posts = Post::with('user.groups')
         // ->whereHas('user.groups', function($query) use ($groupId) {
@@ -118,7 +118,7 @@ class GroupController extends Controller
         $lists = Post::whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
         })
-        ->get();
+        ->latest()->get();
 
         $member = Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists();
 
@@ -133,7 +133,7 @@ class GroupController extends Controller
         $lists = Post::whereHas('groups', function($query) use ($groupId){
             $query->where('group_id', '=', $groupId);
         })
-        ->get();
+        ->latest()->get();
 
         $member = Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists();
 
@@ -152,11 +152,18 @@ class GroupController extends Controller
         $lists = Post::with('groups')->whereHas('groups', function($query) use ($group){
             $query->where('group_id', '=', $group->id);
         })
-        ->get();
+        ->latest()->get();
 
         $member = Auth::user()->groups()->where('user_id', Auth::id())->where('group_id', $group->id)->exists();
 
         return view('group.shownote-g', compact('lists', 'group', 'post', 'member'));
+    }
+
+    public function destroyGroupNote(Group $group,Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('showGroup', $group);
     }
 
     public function inviteGroup(Request $request, Group $group,Token $token)

@@ -23,9 +23,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', function () {
-    return view('top');
-});
+Route::get('/', [MainController::class, 'getTop'])
+->name('top');
 
 Route::get('guest', [MainController::class, 'guest'])
 ->name('guest');
@@ -54,8 +53,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('edit/{post}', [NoteController::class, 'edit'])
                 ->name('edit');
 
-    Route::delete('delete', [NoteController::class, 'delete'])
-                ->name('delete');
+    Route::delete('destroy/{post}', [NoteController::class, 'destroy'])
+                ->name('destroy');
 
     Route::get('getCreateGroup', [GroupController::class, 'getCreateGroup'])
                 ->name('getCreateGroup');
@@ -80,6 +79,9 @@ Route::middleware('auth')->group(function () {
 
     Route::patch('showGroup/edit/{group}/{post}', [GroupController::class, 'editGroupNote'])
                 ->name('editGroupNote');
+
+    Route::delete('showGroup/destroy/{group}/{post}', [GroupController::class, 'destroyGroupNote'])
+                ->name('destroyGroupNote');
 
     Route::post('showGroup/{group}/inviteGroup', [GroupController::class, 'inviteGroup'])
                 ->name('inviteGroup');
