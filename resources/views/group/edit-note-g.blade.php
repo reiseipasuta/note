@@ -7,15 +7,15 @@
         @endif
             <div class="right">
                 <div class="right-menu">
-                    <div class="menu_btn">
-                        <button form="edit">保存</button>
-                    </div>
-                    <div class="menu_btn">
+                    <div class="menu_btn delete">
                         <form action="{{ route('destroyGroupNote', ['group' => $group, 'post' => $post]) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button>削除</button>
                         </form>
+                    </div>
+                    <div class="menu_btn">
+                        <button form="edit">保存</button>
                     </div>
                 </div>
 

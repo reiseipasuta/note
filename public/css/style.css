@@ -398,6 +398,10 @@ button {
     width: 200px;
 }
 
+.delete {
+    background-color: rgb(117, 52, 52);
+}
+
 
 
 

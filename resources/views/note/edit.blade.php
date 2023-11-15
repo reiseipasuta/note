@@ -5,15 +5,15 @@
     <x-list :lists="$lists" />
     <div class="right">
         <div class="right-menu">
-            <div class="menu_btn">
-                <button form="create">保存</button>
-            </div>
-            <div class="menu_btn">
+            <div class="menu_btn delete">
                 <form method="POST" action="{{ route('destroy', $post) }}">
                     @csrf
                     @method('DELETE')
                     <button>削除</button>
                 </form>
+            </div>
+            <div class="menu_btn">
+                <button form="create">保存</button>
             </div>
         </div>
 
