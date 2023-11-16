@@ -43,7 +43,7 @@
                         {{ session('send') }}
                     </div>
                     @endif
-                    <form action="{{ route('share', $post) }}" method="post">
+                    <form action="{{ route('share', ['post' => $post, 'user' => Auth::user()]) }}" method="post">
                         @csrf
                         メールアドレス：<input type="text" name="email">
                         <button>共有する</button>

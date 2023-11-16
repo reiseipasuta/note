@@ -166,7 +166,7 @@ class GroupController extends Controller
         return redirect()->route('showGroup', $group);
     }
 
-    public function inviteGroup(Request $request, Group $group,Token $token)
+    public function inviteGroup(Request $request, Group $group, Token $token)
     {
         // $inviteToken = Str::random(30);
 

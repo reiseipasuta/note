@@ -50,9 +50,9 @@ class MainController extends Controller
         return view('group.shareForm-g', compact('post', 'lists', 'member', 'group'));
     }
 
-    public function share(Request $request, Post $post)
+    public function share(Request $request, Post $post, User $user)
     {
-        Mail::to($request->email)->send(new SharePost($post));
+        Mail::to($request->email)->send(new SharePost($post, $user));
         session()->flash('send', '送信しました');
         return back();
     }

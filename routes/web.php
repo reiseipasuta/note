@@ -95,7 +95,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/shownote/shareform/{post}', [MainController::class, 'shareForm'])
                 ->name('shareForm');
 
-    Route::post('/shownote/share/{post}', [MainController::class, 'share'])
+    Route::post('/shownote/share/{post}/{user}', [MainController::class, 'share'])
                 ->name('share');
 
     Route::get('/showshare/{post}', [MainController::class, 'showShare'])
