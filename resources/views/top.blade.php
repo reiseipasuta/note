@@ -12,12 +12,12 @@
 
 <x-layout>
     <x-slot name="title">
-        TOP - LikeEvernote
+        TOP - NOTE
     </x-slot>
     @auth
     <x-list :lists="$lists" />
     @endauth
-    <div class="top-right">
+    <div class="top-right light">
         {{-- <div class="right-menu">
                 </div>
 

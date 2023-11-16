@@ -418,6 +418,9 @@ button {
     background-size: cover;
     position: relative;
     justify-content: space-around;
+}
+
+.light {
     opacity: 0.6;
 }
 

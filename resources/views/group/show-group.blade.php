@@ -1,9 +1,9 @@
 <x-layout>
     <x-slot name="title">
-        TOP - LikeEvernote
+        NOTE
     </x-slot>
     @if (!$member)
-        <p>グループの参加者ではありません。</p>
+        <p>無効なリンクです。</p>
     @else
         <x-list-g :lists="$lists" :group="$group" />
         {{-- <div class="memolist">

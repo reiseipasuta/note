@@ -1,10 +1,10 @@
 <x-layout>
     <x-slot name="title">
-        TOP - LikeEvernote
+        NOTE
     </x-slot>
 
     <x-list :lists="$lists" />
-            <div class="top-right">
+            <div class="top-right light">
                 {{-- <div class="right-menu">
                 </div>
 

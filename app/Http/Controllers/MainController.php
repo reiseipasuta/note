@@ -28,7 +28,7 @@ class MainController extends Controller
     {
         $lists = Post::where('user_id', Auth::id())->latest()->get();
         Auth::loginUsingId(1);
-        return view('top')->with(['lists' => $lists]);
+        return redirect()->route('notetop', $lists);
     }
 
     public function shareForm(Post $post)

@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        グループ作成 - LikeEvernote
+        グループ作成 - NOTE
     </x-slot>
 
     <div class="top-right">

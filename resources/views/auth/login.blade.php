@@ -48,12 +48,12 @@
                         </div>
 
                         <div class="mar_bottom10">
-                            @if (Route::has('password.request'))
+                            {{-- @if (Route::has('password.request'))
                                 <a class="underline text-sm text-gray-600 hover:text-gray-900"
                                     href="{{ route('password.request') }}">
                                     {{ __('パスワード再発行') }}
                                 </a>
-                            @endif
+                            @endif --}}
 
                             <x-button class="create">
                                 {{ __('ログイン') }}
@@ -62,6 +62,7 @@
                     </form>
 
                 </div>
+
             </div>
 
         </x-layout>

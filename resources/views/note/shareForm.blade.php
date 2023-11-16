@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        TOP - LikeEvernote
+        NOTE
     </x-slot>
             <x-list :lists="$lists" />
             {{-- <div class="memolist">

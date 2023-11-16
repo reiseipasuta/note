@@ -5,7 +5,7 @@
 
         <x-layout>
             <x-slot name="title">
-                Login - NOTE
+                新規登録 - NOTE
             </x-slot>
 
             <div class="top-right">

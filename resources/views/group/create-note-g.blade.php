@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        TOP - LikeEvernote
+        NOTE
     </x-slot>
     @if ($member)
     <x-list-g :lists="$lists" :group="$group" />
