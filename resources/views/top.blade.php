@@ -17,7 +17,7 @@
     @auth
     <x-list :lists="$lists" />
     @endauth
-    <div class="top-right light">
+    <div class="top-right">
         {{-- <div class="right-menu">
                 </div>
 
