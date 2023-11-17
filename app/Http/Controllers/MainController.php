@@ -26,9 +26,8 @@ class MainController extends Controller
 
     public function guest()
     {
-        $lists = Post::where('user_id', Auth::id())->latest()->get();
         Auth::loginUsingId(1);
-        return redirect()->route('notetop', $lists);
+        return redirect()->route('notetop');
     }
 
     public function shareForm(Post $post)
