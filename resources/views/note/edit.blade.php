@@ -6,7 +6,7 @@
     <div class="right">
         <div class="right-menu">
             <div class="menu_btn delete">
-                <form method="POST" action="{{ route('destroy', $post) }}">
+                <form method="POST" action="{{ route('destroy', $post) }}" id="delete">
                     @csrf
                     @method('DELETE')
                     <button>削除</button>

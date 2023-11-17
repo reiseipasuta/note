@@ -80,7 +80,7 @@
 
             </div>
             <div class="quit">
-                <form action="{{ route('quitGroup', $group) }}" method="post">
+                <form action="{{ route('quitGroup', $group) }}" method="post" id="delete">
                     @csrf
                     <button>グループを脱退する。</button>
                 </form>

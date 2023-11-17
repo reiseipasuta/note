@@ -8,7 +8,7 @@
             <div class="right">
                 <div class="right-menu">
                     <div class="menu_btn delete">
-                        <form action="{{ route('destroyGroupNote', ['group' => $group, 'post' => $post]) }}" method="POST">
+                        <form action="{{ route('destroyGroupNote', ['group' => $group, 'post' => $post]) }}" method="POST" id="delete">
                             @csrf
                             @method('DELETE')
                             <button>削除</button>
